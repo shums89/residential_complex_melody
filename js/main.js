@@ -6,6 +6,9 @@ $(document).ready(function () {
   var modal = $(".modal");
   var modalCloseButton = $(".modal-close-button");
   var viewFlatsButton = $(".view-flats");
+  var currentFlat = 1;
+  var flatPath = $(".modal-image path");
+  var flatLink = $(".modal-info .flat-link");
 
   floorPath.on("mouseover", function () {
     currentFloor = $(this).attr("data-floor");
@@ -38,7 +41,24 @@ $(document).ready(function () {
     }
   });
 
+  flatPath.on("mouseover", function () {
+    currentFlat = $(this).attr("data-flat");
+    toggleCurrenFllat();
+  });
+
+  flatLink.on("mouseover", function () {
+    currentFlat = $(this).attr("data-flat_description");
+    toggleCurrenFllat();
+  });
+
   function toggleModal() {
     modal.toggleClass("is-open");
+  }
+
+  function toggleCurrenFllat() {
+    flatLink.removeClass("current-flat-link");
+    flatPath.removeClass("current-flat");
+    $("[data-flat_description=" + currentFlat + "]").toggleClass("current-flat-link");
+    $("[data-flat=" + currentFlat + "]").toggleClass("current-flat");
   }
 });

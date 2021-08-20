@@ -163,7 +163,11 @@ path.current-floor {
   opacity: 0;
   cursor: pointer;
 }
+/*
 .flats path:hover {
+  opacity: 1;
+}*/
+.flats .current-flat {
   opacity: 1;
 }
 .modal-title {
@@ -192,7 +196,12 @@ path.current-floor {
   color: #635854;
   text-decoration: none;
 }
+/*
 .flat-link:hover {
+  color: #3596F5;
+  text-decoration: underline;
+}*/
+.current-flat-link {
   color: #3596F5;
   text-decoration: underline;
 }
